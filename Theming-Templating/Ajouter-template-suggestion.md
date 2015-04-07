@@ -1,7 +1,6 @@
 # Comment ajouter une suggestion de template ?
 
-Par exemple on veux ajouter une suggestion de template pour les nodes selon leur view_mode et selon leur type
-
+Par exemple on veux ajouter une suggestion de template pour les nodes selon leur view_mode et selon leur type :
 
 ```php
 function MODULE_preprocess_node(&$variables) {
@@ -9,7 +8,5 @@ function MODULE_preprocess_node(&$variables) {
 }
 ```
 
-exemple de template pour un contenu de type **article** en view_mode **full** : 
-
-*node--article--full.tpl.php*
+Exemple de template pour un contenu de type **article** en view_mode **full** : *node--article--full.tpl.php*
 
