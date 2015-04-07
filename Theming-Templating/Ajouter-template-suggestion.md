@@ -1,4 +1,4 @@
-# Commnet ajouter une suggestion de template ?
+# Comment ajouter une suggestion de template ?
 
 Par exemple on veux ajouter une suggestion de template pour les nodes selon leur view_mode et selon leur type
 
