@@ -27,3 +27,13 @@ $form['content_comment'] = array(
 );
 ```
 
+
+## States fonction d'une checkbox
+
+```php
+$form['field_user_arc']['#states'] = array(
+  'required' => array(
+    ':input[name="roles[6]"]' => array('checked' => TRUE),
+  ),
+);
+```
