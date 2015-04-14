@@ -2,7 +2,7 @@
 
 ##Exemple sur un élément radio
 
-Dans l'exemple suivant, le champ texte **Content comment ?** ne s'affichera et ne sera obligatoire que si la personne à sélectionné oui au champ radio **content ?** 
+Dans l'exemple suivant, le champ texte **Content comment ?** ne s'affichera et ne sera obligatoire que si la personne à sélectionné **oui** au champ radio **content ?** 
 
 ```php
 $form['content'] = array(
