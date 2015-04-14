@@ -4,4 +4,4 @@
 
 |Commande|Résultat|
 |--------|--------|
-|`drush dl drupal-8.x --select --drupal-project-rename=www`|Propose les différentes version de D8 disponible, puis la télécharge et la place dans un dossier **www**|
+|`drush dl drupal-8.x --select --drupal-project-rename=www`|Propose les différentes versions de D8 disponibles, puis télécharge la version choisie et la place dans un dossier **www**|
