@@ -16,9 +16,6 @@ $form['content_comment'] = array(
   '#type' => 'textfield',
   '#title' => t('Content comment ???'),
   '#required' => FALSE,
-  '#size' => 32,
-  '#maxlength' => 32,
-  '#attributes' => array('class' => array('champs-texte')),
   '#states' => array(
     'required' => array(
       ':input[name="content"]' => array('value' => 'oui'),
