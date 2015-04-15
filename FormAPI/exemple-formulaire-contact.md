@@ -1,4 +1,6 @@
 #Exemple mini formulaire de contact
+
+Avec states, ajax, validate...
  
 ```php
 function fd_contact($form, &$form_state) {
