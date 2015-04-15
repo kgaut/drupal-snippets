@@ -8,7 +8,7 @@ Dans l'exemple suivant, le champ texte **Content comment ?** ne s'affichera et n
 $form['content'] = array(
   '#type' => 'radios',
   '#title' => t('Je suis content ?'),
-  '#options'=>array('NON'=>'Non','OUI'=>'Oui'),
+  '#options'=>array('N'=>'Non','O'=>'Oui'),
   '#required' => TRUE,
 );
 
@@ -18,10 +18,10 @@ $form['content_comment'] = array(
   '#required' => FALSE,
   '#states' => array(
     'required' => array(
-      ':input[name="content"]' => array('value' => 'oui'),
+      ':input[name="content"]' => array('value' => 'O'),
     ),
     'visible' => array(
-      ':input[name="content"]' => array('value' => 'oui'),
+      ':input[name="content"]' => array('value' => 'O'),
     ),
   )
 );
