@@ -1,5 +1,5 @@
 #Entity Field Query
-```
+```php
 $query = new EntityFieldQuery();
 $result = $query
   ->entityCondition('entity_type', 'node')
