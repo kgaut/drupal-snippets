@@ -11,12 +11,12 @@ $result = $query
 
 ##Debuguer une EFG
 1 - Ajouter un tag à la query
-```
+```php
 $query->addTag('efq_debug');
-
+```
 
 2 - utiliser un hook_query_alter
-```
+```php
 function CUSTOMMODULE_query_alter($query) {
   if ($query->hasTag('efq_debug')) {
     dpm((string) $query);
