@@ -9,7 +9,7 @@ $result = $query
   ->execute();
 ```
 
-##Debuguer une EFG
+##Debuguer une EFQ
 1 - Ajouter un tag à la query
 ```php
 $query->addTag('efq_debug');
