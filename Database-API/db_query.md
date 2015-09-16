@@ -10,6 +10,11 @@ foreach ($result as $record) {
 } 
 ```
 
+##Select simple
+```php
+db_query('select MAX(changed) from eck_weekly_picks where status = 1 LIMIT 1')->fetchField();
+```
+
 ##Insertion simple
 ```php
 $result = db_query("INSERT INTO {node} (title, uid, created) VALUES (%s, %d, %d)", 'Example', 1, time());
