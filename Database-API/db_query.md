@@ -12,7 +12,7 @@ foreach ($result as $record) {
 
 ##Select simple
 ```php
-db_query('select MAX(changed) from {node} where status = 1 LIMIT 1')->fetchField();
+$last_update = db_query('select MAX(changed) from {node} where status = 1 LIMIT 1')->fetchField();
 ```
 
 ##Insertion simple
