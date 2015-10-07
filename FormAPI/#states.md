@@ -56,6 +56,8 @@ Autre exemple :
     '#maxlength' => 140,
     '#default_value' => variable_get('twitter_post_add_tracking_code_utm_medium', ''),
     '#states' => array(
+      //À noter, le required ne fera qu'ajouter une asterisque rouge, aucun test ne sera
+      //effectué côté serveur. (merci @DuaelFr)
       'required' => array(
         ':input[name="twitter_post_add_tracking_code"]' => array('checked'=>true)
       ),
