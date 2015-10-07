@@ -39,3 +39,29 @@ $form['field_user_name']['#states'] = array(
   ),
 );
 ```
+
+Autre exemple :
+
+```php
+  $form['twitter_post_add_tracking_code'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Add tracking code'),
+    '#default_value' => variable_get('twitter_post_add_tracking_code', 0),
+  );
+  //Le champ qui suit ne sera visible que si le champs précédé est coché
+  //cela grâce à l'option #states
+  $form['twitter_post_add_tracking_code_utm_medium'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Campaign Medium  (utm_medium)'),
+    '#maxlength' => 140,
+    '#default_value' => variable_get('twitter_post_add_tracking_code_utm_medium', ''),
+    '#states' => array(
+      'required' => array(
+        ':input[name="twitter_post_add_tracking_code"]' => array('checked'=>true)
+      ),
+      'visible' => array(
+        ':input[name="twitter_post_add_tracking_code"]' => array('checked'=>true)
+      ),
+    ),
+  );
+```
