@@ -28,12 +28,14 @@ $form['content_comment'] = array(
 ```
 
 
-## States fonction d'une checkbox
+## States sur une checkbox unique
+
+Ici, le champ field_user_name ne sera obligatoire que si le champ **field_name_enable** de type checkbox  est coché.
 
 ```php
-$form['field_user_arc']['#states'] = array(
+$form['field_user_name']['#states'] = array(
   'required' => array(
-    ':input[name="roles[6]"]' => array('checked' => TRUE),
+    ':input[name="field_name_enable"]' => array('checked' => TRUE),
   ),
 );
 ```
