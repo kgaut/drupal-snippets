@@ -3,6 +3,7 @@
 $query = new EntityFieldQuery();
 $result = $query
   ->entityCondition('entity_type', 'node')
+  ->entityCondition('bundle', 'article')
   ->fieldCondition('field_categories', 'tid', array('12','13'), 'IN')
   ->propertyCondition('status', NODE_PUBLISHED)
   ->range(0,5)
