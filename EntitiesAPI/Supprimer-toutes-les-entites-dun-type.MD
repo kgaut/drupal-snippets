@@ -10,7 +10,7 @@ drupal_bootstrap(DRUPAL_BOOTSTRAP_FULL);
 
 
 $entity_type = "node"; //Nom du type de l'entité
-$bundle = "resource"; //Bundle de l'entité ('article', 'page'...)
+$bundle = "article"; //Bundle de l'entité ('article', 'page'...)
 
 $query = new EntityFieldQuery();
 $result = $query
