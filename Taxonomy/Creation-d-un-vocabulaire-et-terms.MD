@@ -2,7 +2,7 @@
 ```php
   $voc_name = "Nom du vocabulaire";
   $voc_desc = "Description du vocabulaire";
-  $voc_machine_name = "Nom du vocabulaire";
+  $voc_machine_name = "nom_machine";
 
   $vocabulary = new stdClass();
   $vocabulary->name = $voc_name;
