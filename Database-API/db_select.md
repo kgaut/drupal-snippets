@@ -30,3 +30,17 @@ $nodes = $q->fields('n',array('nid','title'))
   ->execute()
   ->fetchAllAssoc('nid');
 ```
+
+##isNull & isNotNull
+```
+$query = db_select('scald_atoms', 'a')
+  ->fields('a', array('sid'))
+$query->leftjoin('table','dvd','dvd.entity_id = a.sid);
+$query->isNull('dvd.mon_field_value');
+```
+```
+$query = db_select('scald_atoms', 'a')
+  ->fields('a', array('sid'))
+$query->leftjoin('table','dvd','dvd.entity_id = a.sid);
+$query->isNotNull('dvd.mon_field_value');
+```
