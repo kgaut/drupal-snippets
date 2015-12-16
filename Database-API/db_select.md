@@ -33,14 +33,18 @@ $nodes = $q->fields('n',array('nid','title'))
 
 ##isNull & isNotNull
 ```php
-$query = db_select('scald_atoms', 'a')
-  ->fields('a', array('sid'))
-$query->leftjoin('table','dvd','dvd.entity_id = a.sid);
-$query->isNull('dvd.mon_field_value');
+$query = db_select('scald_atoms', 'a');
+$query->fields('a', array('sid','title'));
+$query->leftjoin('table_name','table_alias','table_alias.entity_id = a.sid);
+$query->isNull('table_alias.mon_field_value');
+$query->execute();
+$query->fetchAllAssoc('nid');
 ```
 ```php
-$query = db_select('scald_atoms', 'a')
-  ->fields('a', array('sid'))
-$query->leftjoin('table','dvd','dvd.entity_id = a.sid);
-$query->isNotNull('dvd.mon_field_value');
+$query = db_select('scald_atoms', 'a');
+$query->fields('a', array('sid','title'));
+$query->leftjoin('table_name','table_alias','table_alias.entity_id = a.sid);
+$query->isNotNull('table_alias.mon_field_value');
+$query->execute();
+$query->fetchAllAssoc('nid');
 ```
