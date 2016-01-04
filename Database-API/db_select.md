@@ -32,7 +32,7 @@ $nodes = $q->fields('n',array('nid','title'))
 ```
 ##Count
 ```php
-$results = db_select('node')
+$nb_results = db_select('node')
   ->fields(NULL, array('nid'))
   ->condition('type','page')
   ->condition('status',1)
