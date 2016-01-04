@@ -30,6 +30,16 @@ $nodes = $q->fields('n',array('nid','title'))
   ->execute()
   ->fetchAllAssoc('nid');
 ```
+##Count
+```php
+$results = db_select('node')
+  ->fields(NULL, array('nid'))
+  ->condition('type','page')
+  ->condition('status',1)
+  ->countQuery()
+  ->execute()
+  ->fetchField();
+```
 
 ##isNull & isNotNull
 ```php
