@@ -45,7 +45,7 @@ $nb_results = db_select('node')
 ```php
 $query = db_select('scald_atoms', 'a');
 $query->fields('a', array('sid','title'));
-$query->leftjoin('table_name','table_alias','table_alias.entity_id = a.sid);
+$query->leftjoin('table_name','table_alias','table_alias.entity_id = a.sid');
 $query->isNull('table_alias.mon_field_value');
 $query->execute();
 $query->fetchAllAssoc('nid');
@@ -53,7 +53,7 @@ $query->fetchAllAssoc('nid');
 ```php
 $query = db_select('scald_atoms', 'a');
 $query->fields('a', array('sid','title'));
-$query->leftjoin('table_name','table_alias','table_alias.entity_id = a.sid);
+$query->leftjoin('table_name','table_alias','table_alias.entity_id = a.sid');
 $query->isNotNull('table_alias.mon_field_value');
 $query->execute();
 $query->fetchAllAssoc('nid');
