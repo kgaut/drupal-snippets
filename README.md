@@ -1,5 +1,5 @@
 # Drupal-snippets
-Ensemble de bouts de codes "snippets" reliés à Drupal (en version 7 pour l'instant).
+Ensemble de bouts de codes "snippets" reliés à Drupal ici pour la version 8 de Drupal.
 
 Certains sont présents avec - un peu - plus d'explications sur [mon site](http://kgaut.net/snippets/?utm_source=github&utm_medium=post&utm_campaign=github-snippets).
 
