@@ -11,4 +11,5 @@
 |--------|--------|
 |`drush @alias sapi-s`|Affiche le statut des index de recherche|
 |`drush @alias sapi-c`|Vide les indexes de recherche|
+|`drush @alias sapi-i`|Lance une réindexation pour l'ensemble des indexes|
 |`drush @alias sapi-r`|Marque les indexes pour réindexation|
