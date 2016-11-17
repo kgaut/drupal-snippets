@@ -63,8 +63,8 @@ function drush_deprod() {
       }
     }
   }
-  if(is_module_enabled('google_analytics') && drush_confirm(dt('Would you like to disable the module google analytics ?'))) {
-    drush_invoke_process($alias,'pm-disable google_analytics');
+  if(is_module_enabled('googleanalytics') && drush_confirm(dt('Would you like to disable the module google analytics ?'))) {
+    drush_invoke_process($alias,'pm-disable googleanalytics');
   }
   if(is_module_enabled('piwik') && drush_confirm(dt('Would you like to disable the module piwik ?'))) {
     drush_invoke_process($alias,'pm-disable piwik');
@@ -111,8 +111,8 @@ function drush_deprod_reprod() {
       drush_invoke_process($alias, 'pm-disable devel');
     }
   }
-  if(is_module_installed('google_analytics') && !is_module_enabled('google_analytics') && drush_confirm(dt('Would you like to enable the module google analytics ?'))) {
-    drush_invoke_process($alias,'pm-enable google_analytics');
+  if(is_module_installed('googleanalytics') && !is_module_enabled('google_analytics') && drush_confirm(dt('Would you like to enable the module google analytics ?'))) {
+    drush_invoke_process($alias,'pm-enable googleanalytics');
   }
   if(is_module_installed('piwik') && !is_module_enabled('piwik') && drush_confirm(dt('Would you like to enable the module piwik ?'))) {
     drush_invoke_process($alias,'pm-enable piwik');
