@@ -52,7 +52,11 @@ function drush_deprod() {
     drush_invoke_process($alias,'pm-enable stage_file_proxy');
   }
   if(drush_confirm(dt('Would you like to enable the module Devel ?'))) {
+    $devel_enable = true;
     drush_invoke_process($alias,'pm-enable devel');
+  }
+  else {
+    $devel_enable = false;
   }
   if(drush_confirm(dt('Would you like display error and messages ?'))) {
     drush_invoke_process($alias,'variable-set error_level 2');
@@ -72,16 +76,23 @@ function drush_deprod() {
   if(drush_confirm(dt('Would you like to disable cached pages compression ?'))) {
     drush_invoke_process($alias,'variable-set page_compression 0');
   }
+  if($devel_enable && drush_confirm(dt('Would you like all user to access developer information  ?'))) {
+    drush_invoke_process($alias,'role-add-perm 1 "access devel information"'); //Anonymous
+      drush_invoke_process($alias,'role-add-perm 2 "access devel information"'); //Authenticated user
+  }
 }
 
 function drush_deprod_reprod() {
   $alias = drush_get_context('DRUSH_TARGET_SITE_ALIAS');
-
   if(drush_confirm(dt('Would you like to disable the module Stage File Proxy ?'))) {
     drush_invoke_process($alias,'pm-disable stage_file_proxy');
   }
   if(drush_confirm(dt('Would you like to disable the module Devel ?'))) {
+    $devel_disable = true;
     drush_invoke_process($alias,'pm-disable devel');
+  }
+  else {
+    $devel_disable = false;
   }
   if(drush_confirm(dt('Would you like hide error and messages ?'))) {
     drush_invoke_process($alias,'variable-set error_level 0');
@@ -100,5 +111,9 @@ function drush_deprod_reprod() {
   }
   if(drush_confirm(dt('Would you like to enable cached pages compression ?'))) {
     drush_invoke_process($alias,'variable-set page_compression 1');
+  }
+  if(!$devel_disable && drush_confirm(dt('Would you like to prevent all user to access developer information  ?'))) {
+    drush_invoke_process($alias,'role-remove-perm 1 "access devel information"'); //Anonymous
+    drush_invoke_process($alias,'role-remove-perm 2 "access devel information"'); //Authenticated user
   }
 }
