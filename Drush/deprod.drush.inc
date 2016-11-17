@@ -87,10 +87,6 @@ function drush_deprod() {
   if(drush_confirm(dt('Would you like to disable cached pages compression ?'))) {
     drush_invoke_process($alias,'variable-set page_compression 0');
   }
-  if(is_module_enabled('devel') && drush_confirm(dt('Would you like all user to access developer information  ?'))) {
-    drush_invoke_process($alias,'role-add-perm 1 "access devel information"'); //Anonymous
-    drush_invoke_process($alias,'role-add-perm 2 "access devel information"'); //Authenticated user
-  }
 }
 
 function drush_deprod_reprod() {
