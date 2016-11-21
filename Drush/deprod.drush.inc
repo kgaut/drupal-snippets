@@ -57,11 +57,14 @@ function drush_deprod() {
   if(is_module_installed('devel') && !is_module_enabled('devel')) {
     if(drush_confirm(dt('Would you like to enable the module Devel ?'))) {
       drush_invoke_process($alias,'pm-enable devel');
+    }
+  }
+  if(is_module_enabled('devel')) {
       if(drush_confirm(dt('Would you like all user to access developer information  ?'))) {
         drush_invoke_process($alias,'role-add-perm 1 "access devel information"'); //Anonymous
         drush_invoke_process($alias,'role-add-perm 2 "access devel information"'); //Authenticated user
       }
-    }
+
   }
   if(is_module_enabled('googleanalytics') && drush_confirm(dt('Would you like to disable the module google analytics ?'))) {
     drush_invoke_process($alias,'pm-disable googleanalytics');
