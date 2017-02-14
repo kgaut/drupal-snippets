@@ -64,7 +64,6 @@ function drush_deprod() {
         drush_invoke_process($alias,'role-add-perm 1 "access devel information"'); //Anonymous
         drush_invoke_process($alias,'role-add-perm 2 "access devel information"'); //Authenticated user
       }
-
   }
   if(is_module_enabled('googleanalytics') && drush_confirm(dt('Would you like to disable the module google analytics ?'))) {
     drush_invoke_process($alias,'pm-disable googleanalytics');
@@ -89,6 +88,9 @@ function drush_deprod() {
   }
   if(drush_confirm(dt('Would you like to disable cached pages compression ?'))) {
     drush_invoke_process($alias,'variable-set page_compression 0');
+  }
+  if(is_module_enabled('smtp') && drush_confirm(dt('Would you like to disable SMTP Authetication Support (smtp) module ?'))) {
+    drush_invoke_process($alias,'pm-disable smtp');
   }
 }
 
@@ -133,6 +135,9 @@ function drush_deprod_reprod() {
   }
   if(drush_confirm(dt('Would you like to enable cached pages compression ?'))) {
     drush_invoke_process($alias,'variable-set page_compression 1');
+  }
+  if(is_module_installed('smtp') && !is_module_enabled('smtp') && drush_confirm(dt('Would you like to enable SMTP Authetication Support (smtp) module ?'))) {
+    drush_invoke_process($alias,'pm-enable smtp');
   }
 }
 
