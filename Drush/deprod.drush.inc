@@ -47,7 +47,7 @@ function deprod_drush_help($section) {
 
 function drush_deprod() {
   if (!drush_bootstrap_to_phase(DRUSH_BOOTSTRAP_DRUPAL_DATABASE)) {
-    return drush_set_error('DRUPAL_SITE_NOT_FOUND', dt('You need to specify an alias or run this command within a drupal site.'));
+    return drush_set_error('DRUPAL_SITE_NOT_FOUND', dt('The specified drupal site failed to bootstrap'));
   }
   $alias = drush_get_context('DRUSH_TARGET_SITE_ALIAS');
 
@@ -96,7 +96,7 @@ function drush_deprod() {
 
 function drush_deprod_reprod() {
   if (!drush_bootstrap_to_phase(DRUSH_BOOTSTRAP_DRUPAL_DATABASE)) {
-    return drush_set_error('DRUPAL_SITE_NOT_FOUND', dt('You need to specify an alias or run this command within a drupal site.'));
+    return drush_set_error('DRUPAL_SITE_NOT_FOUND', dt('The specified drupal site failed to bootstrap'));
   }
   $alias = drush_get_context('DRUSH_TARGET_SITE_ALIAS');
 
