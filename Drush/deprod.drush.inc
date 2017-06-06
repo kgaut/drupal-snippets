@@ -51,9 +51,12 @@ function drush_deprod() {
   }
   $alias = drush_get_context('DRUSH_TARGET_SITE_ALIAS');
 	if(drush_drupal_major_version() == 8) {
+		if(drush_confirm(dt('Would you like to enable the module Stage File Proxy ?'))) {
+	    drush_invoke_process($alias,'pm-enable stage_file_proxy');
+	  }
     if(drush_confirm(dt('Would you like all user to access developer information  ?'))) {
-	        drush_invoke_process($alias,'role-add-perm "anonymous" "access devel information"'); //Anonymous
-	        drush_invoke_process($alias,'role-add-perm "authenticated" "access devel information"'); //Authenticated user
+      drush_invoke_process($alias,'role-add-perm "anonymous" "access devel information","access kint"'); //Anonymous
+      drush_invoke_process($alias,'role-add-perm "authenticated" "access devel information","access kint"'); //Authenticated user
     }
 	}
 	elseif(drush_drupal_major_version() == 7) {
@@ -112,8 +115,8 @@ function drush_deprod_reprod() {
   $alias = drush_get_context('DRUSH_TARGET_SITE_ALIAS');
 	if(drush_drupal_major_version() == 8) {
     if(drush_confirm(dt('Would you like to prevent all user to access developer information  ?'))) {
-      drush_invoke_process($alias,'role-remove-perm "anonymous" "access devel information"'); //Anonymous
-      drush_invoke_process($alias,'role-remove-perm "authenticated" "access devel information"'); //Authenticated user
+      drush_invoke_process($alias,'role-remove-perm "anonymous" "access devel information","access kint"'); //Anonymous
+      drush_invoke_process($alias,'role-remove-perm "authenticated" "access devel information","access kint"'); //Authenticated user
     }
 	}
 	elseif(drush_drupal_major_version() == 7) {
