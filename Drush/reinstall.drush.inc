@@ -32,7 +32,9 @@ function reinstall_drush_help($section) {
 
 function drush_reinstall($module_name) {
   $alias = drush_get_context('DRUSH_TARGET_SITE_ALIAS');
-  drush_invoke_process($alias,'pm-disable '.$module_name);
+  if(drush_drupal_major_version() < 8) {
+    drush_invoke_process($alias,'pm-disable '.$module_name);  
+  }
   drush_invoke_process($alias,'pm-uninstall '.$module_name);
   drush_invoke_process($alias,'pm-enable '.$module_name);
 }
