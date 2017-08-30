@@ -5,7 +5,7 @@
 ```php
 
 function menu_callback() {
-  drupal_get_form(‘mon_form_custom’); // appel du formulaire
+  drupal_get_form('mon_form_custom'); // appel du formulaire
 }
 
 function mon_form_custom($form, &$form_state) {
