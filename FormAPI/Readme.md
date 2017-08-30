@@ -8,15 +8,15 @@ function menu_callback() {
   drupal_get_form(‘mon_form_custom’); // appel du formulaire
 }
 
-function mon_form_custom($form,&$form_state) {
+function mon_form_custom($form, &$form_state) {
   //Définition du formulaire
 }
 
-function mon_form_custom_validate($form,&$form_state) {
+function mon_form_custom_validate($form, &$form_state) {
   //fonction de validation du formulaire globale
 }
 
-function mon_form_custom_submit($form,&$form_state) {
+function mon_form_custom_submit($form, &$form_state) {
   //fonction de validation
 }
 
