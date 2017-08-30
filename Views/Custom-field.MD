@@ -1,6 +1,6 @@
-#Comment afficher un champ personnalisé dans les résultats d'une vue
+# Comment afficher un champ personnalisé dans les résultats d'une vue
 
-##Etape 1 : 
+## Etape 1 : 
 ```php
 function MON_MODULE_views_data() {
   $data['acaps_user']['table']['group'] = t('User'); // groupement de field dans lequel sera placé notre champ custom dans views
@@ -20,7 +20,7 @@ function MON_MODULE_views_data() {
 }
 ```
 
-##Etape 2
+## Etape 2
 ```php
 <?php
 class views_handler_mon_champ_custom extends views_handler_field {
