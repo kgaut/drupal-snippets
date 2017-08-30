@@ -3,12 +3,12 @@
 ## Etape 1 : 
 ```php
 function MON_MODULE_views_data() {
-  $data['acaps_user']['table']['group'] = t('User'); // groupement de field dans lequel sera placé notre champ custom dans views
-  $data['acaps_user']['table']['join'] = array(
+  $data['projet_user']['table']['group'] = t('User'); // groupement de field dans lequel sera placé notre champ custom dans views
+  $data['projet_user']['table']['join'] = array(
     '#global' => array(),
   );
 
-  $data['acaps_user']['countries_followed'] = array(
+  $data['projet_user']['countries_followed'] = array(
     'title' => t('Mon nom de champ'),
     'help' => t('Ma description de champ'),
     'field' => array(
