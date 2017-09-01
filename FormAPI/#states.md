@@ -1,6 +1,6 @@
-#Attribut States
+# Attribut States
 
-##Exemple sur un élément radio
+## Exemple sur un élément radio
 
 Dans l'exemple suivant, le champ texte **Content comment ?** ne s'affichera et ne sera visible et obligatoire que si la personne à sélectionné **oui** au champ radio **content ?** 
 
