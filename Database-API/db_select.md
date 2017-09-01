@@ -1,6 +1,6 @@
-#db_select
+# db_select
 
-##Exemples basiques
+## Exemples basiques
 ```php
 $q = db_select('fd_contact','c')
   ->fields('c')
@@ -16,7 +16,7 @@ $q = db_select('fd_contact','c')
   ->fetchAllAssoc('cid');
 ```
 
-##Jointure
+## Jointure
 ```php
 $q = db_select('node','n');
 $q->join('field_data_field_logo','l','l.entity_id = n.nid AND l.entity_type = :node AND l.deleted= :deleted',array(
@@ -30,7 +30,7 @@ $nodes = $q->fields('n',array('nid','title'))
   ->execute()
   ->fetchAllAssoc('nid');
 ```
-##Count
+## Count
 ```php
 $nb_results = db_select('node')
   ->fields(NULL, array('nid'))
@@ -41,7 +41,7 @@ $nb_results = db_select('node')
   ->fetchField();
 ```
 
-##isNull & isNotNull
+## isNull & isNotNull
 ```php
 $query = db_select('scald_atoms', 'a');
 $query->fields('a', array('sid','title'));
