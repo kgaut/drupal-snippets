@@ -1,6 +1,6 @@
 # DB Insert
 
-[https://www.drupal.org/node/310079](db_insert sur drupal.org)
+(https://www.drupal.org/node/310079)[db_insert sur drupal.org]
 
 ## Requète simple d'insertion dans la table node
 ```php
