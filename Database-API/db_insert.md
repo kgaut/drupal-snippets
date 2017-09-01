@@ -1,8 +1,8 @@
-#DB Insert
+# DB Insert
 
 [https://www.drupal.org/node/310079](db_insert sur drupal.org)
 
-##Requète simple d'insertion dans la table node
+## Requète simple d'insertion dans la table node
 ```php
 $nid = db_insert('node') ->fields(array(
   'title' => 'Example',
