@@ -1,4 +1,4 @@
-#Entity Field Query
+# Entity Field Query
 ```php
 $query = new EntityFieldQuery();
 $result = $query
@@ -10,7 +10,7 @@ $result = $query
   ->execute();
 ```
 
-##Debuguer une EFQ
+## Debuguer une EFQ
 1 - Ajouter un tag à la query
 ```php
 $query->addTag('efq_debug');
